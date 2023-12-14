@@ -3,28 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM</title>
+    <title>Create and remove HTML dynamically</title>
   </head>
   <body>
-    <h1 id="main">Hello World</h1>
-    <p>This is 1 paragraph.</p>
-    <p>This is 2 paragraph.</p>
-    <ul id="list">
+    <h1 id="title">Hello World</h1>
+    <div id="container">
+      <p>This is 1 paragraph.</p>
+      <p>This is 2 paragraph.</p>
+      <ul id="list">
         <li class="item">Item 1</li>
         <li class="item">Item 2</li>
         <li class="item">Item 3</li>
-    </ul>
-    <p id="paragraph">This is 3 paragraph.</p>
-    <h2 class="hobbits">UUU</h2>
-    <a class="hobbits" href="#">FFF</a>
-    <p class="hobbits">AAA</p>
-    <ul>
+      </ul>
+      <p id="paragraph">This is 3 paragraph.</p>
+      <h2 class="hobbits">UUU</h2>
+      <a class="hobbits" href="#">FFF</a>
+      <p class="hobbits">AAA</p>
+      <ul id="list2">
         <li>HHH</li>
         <li>GGG</li>
         <li class="hobbits">JJJ</li>
-    </ul>
+      </ul>
+    </div>
     <script>
-      let mainHeading = document.querySelector("#main");
+      let mainHeading = document.querySelector("#title");
       mainHeading.textContent = "Hello, DOM";
       let items = document.querySelectorAll('.item');
       console.log(items);
@@ -36,34 +38,60 @@
         p1.style.color = "blue";
       }
 
-      let myElement = document.getElementById('main');
+      let myElement = document.getElementById("title");
       myElement.style.borderStyle = "dotted";
 
-      let myElement2 = document.getElementsByClassName('item');
-      for (let element of myElement2){
-      element.style.backgroundColor = "grey";}
-       let myElement3 = document.getElementsByTagName('p');
-       for (let element2 of myElement3){
-       element2.style.borderStyle = "double";}
+      let myElement2 = document.getElementsByClassName("item");
+      for (let element of myElement2) {
+        element.style.backgroundColor = "grey";
+      }
+      let myElement3 = document.getElementsByTagName("p");
+      for (let element2 of myElement3) {
+        element2.style.borderStyle = "double";
+      }
 
-       let myElement4 = document.getElementById('list');
-       myElement4.parentNode.style.borderStyle = "dashed";
-       myElement4.firstChild.nextSibling.style.color = "orange";
-       myElement4.lastChild.previousSibling.style.color = "yellow";
-       let myElement5 = document.getElementById('paragraph');
+      let myElement4 = document.getElementById("list");
+      myElement4.parentNode.style.borderStyle = "dashed";
+      myElement4.firstChild.nextSibling.style.color = "orange";
+      myElement4.lastChild.previousSibling.style.color = "yellow";
+      let myElement5 = document.getElementById("paragraph");
       myElement5.style.color = "green";
       myElement5.textContent = "Changed paragraph";
       myElement5.innerHTML = '<a href="https://google.com">Google</a>';
-      let link = myElement5.querySelector('a');
-      link.setAttribute('href', 'https://facebook.com');
+      let link = myElement5.querySelector("a");
+      link.setAttribute("href", "https://facebook.com");
       link.href = "index.html";
 
-
       let hobbits = document.getElementsByClassName("hobbits");
-      for(let h of hobbits){
+      for (let h of hobbits) {
         h.textContent = "Hobbits";
         h.style.backgroundColor = "lightgreen";
       }
+      let newParagraph = document.createElement("p");
+      newParagraph.textContent = "This is a new paragraph";
+      let container = document.getElementById("container");
+      container.appendChild(newParagraph);
+
+      let newListItem = document.createElement("li");
+      newListItem.textContent = "Item 1.5";
+      let list = document.getElementById("list");
+      let secondListItem = list.children[1];
+      list.insertBefore(newListItem, secondListItem);
+
+      let newHeading = document.createElement("h1");
+      newHeading.textContent = "JavaScript Lesson - Updated";
+      let body = document.body;
+      let oldHeading = document.getElementById("title");
+      body.replaceChild(newHeading, oldHeading);
+
+      let lastParagraph = container.lastChild;
+      container.removeChild(lastParagraph);
+
+      let newList = document.createElement("li");
+      newList.textContent = "new element";
+      let father = document.getElementById('list2');
+      father.appendChild(newList);
+
     </script>
   </body>
 </html>
