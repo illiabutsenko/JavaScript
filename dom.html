@@ -7,12 +7,21 @@
   </head>
   <body>
     <h1 id="main">Hello World</h1>
-    <p>This is a 1 paragraph.</p>
-    <p>This is a 2 paragraph.</p>
+    <p>This is 1 paragraph.</p>
+    <p>This is 2 paragraph.</p>
+    <ul id="list">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+    </ul>
+    <p id="paragraph">This is 3 paragraph.</p>
+    <h2 class="hobbits">UUU</h2>
+    <a class="hobbits" href="#">FFF</a>
+    <p class="hobbits">AAA</p>
     <ul>
-      <li class="item">Item 1</li>
-      <li class="item">Item 2</li>
-      <li class="item">Item 3</li>
+        <li>HHH</li>
+        <li>GGG</li>
+        <li class="hobbits">JJJ</li>
     </ul>
     <script>
       let mainHeading = document.querySelector("#main");
@@ -25,6 +34,35 @@
       let p = document.querySelectorAll("p");
       for (let p1 of p) {
         p1.style.color = "blue";
+      }
+
+      let myElement = document.getElementById('main');
+      myElement.style.borderStyle = "dotted";
+
+      let myElement2 = document.getElementsByClassName('item');
+      for (let element of myElement2){
+      element.style.backgroundColor = "grey";}
+       let myElement3 = document.getElementsByTagName('p');
+       for (let element2 of myElement3){
+       element2.style.borderStyle = "double";}
+
+       let myElement4 = document.getElementById('list');
+       myElement4.parentNode.style.borderStyle = "dashed";
+       myElement4.firstChild.nextSibling.style.color = "orange";
+       myElement4.lastChild.previousSibling.style.color = "yellow";
+       let myElement5 = document.getElementById('paragraph');
+      myElement5.style.color = "green";
+      myElement5.textContent = "Changed paragraph";
+      myElement5.innerHTML = '<a href="https://google.com">Google</a>';
+      let link = myElement5.querySelector('a');
+      link.setAttribute('href', 'https://facebook.com');
+      link.href = "index.html";
+
+
+      let hobbits = document.getElementsByClassName("hobbits");
+      for(let h of hobbits){
+        h.textContent = "Hobbits";
+        h.style.backgroundColor = "lightgreen";
       }
     </script>
   </body>
