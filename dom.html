@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1 id="main">Hello World</h1>
+    <p>This is a 1 paragraph.</p>
+    <p>This is a 2 paragraph.</p>
+    <ul>
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+    </ul>
+    <script>
+      let mainHeading = document.querySelector("#main");
+      mainHeading.textContent = "Hello, DOM";
+      let items = document.querySelectorAll('.item');
+      console.log(items);
+      for (let item of items) {
+        item.style.backgroundColor = "yellow";
+      }
+      let p = document.querySelectorAll("p");
+      for (let p1 of p) {
+        p1.style.color = "blue";
+      }
+    </script>
+  </body>
+</html>
