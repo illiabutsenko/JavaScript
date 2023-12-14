@@ -27,7 +27,7 @@ const square6 = (a, b, c, d) => [a * a, b * b, c * c, d * d];
 console.log(square6(3, 4, 5, 6));
 
 let aaa = [3, 4, 5];
-const square7 = aaa.map((c) => c * c);
+const square7 = aaa.map((c) => c ** 2);
 console.log(square7);
 
 // const ask = (question, yes, no) => confirm(question) ? yes() : no();
