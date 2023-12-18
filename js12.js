@@ -50,4 +50,13 @@ console.log(d.toUTCString());
 console.log(d.toISOString());
 
 let myBirthday = new Date(2023, 7, 2);
-console.log("My birthday is on: "+myBirthday.toLocaleDateString("UK"));
+console.log("My birthday is on: " + myBirthday.toLocaleDateString("UK"));
+
+let Calendar = new Date();
+let c3 = document.getElementById("timer");
+
+for (let i = 0; i < 30; i++) {
+  c2 = Calendar.getDate();
+  Calendar.setDate(c2 + 1);
+  c3.textContent += " \n" + c2;
+}
