@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+    <style>
+      .product {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        box-shadow: 0, 0, 10px rgba(0, 0, 0, 0);
+      }
+
+      .product img {
+        width: 100px;
+      }
+
+      .product h3 {
+        margin: 0;
+      }
+
+      .product p {
+        margin: 0;
+        color: #665;
+      }
+
+      .product p:nth-child(2)::before {
+        content: "$";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="products"></div>
+    <script src="js18AJAX.js"></script>
+  </body>
+</html>
