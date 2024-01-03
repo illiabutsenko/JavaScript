@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internationalization, Localization</title>
+  </head>
+  <body bgcolor="#363434">
+    <script src="js38international.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.7.14/i18next.js" integrity="sha512-ZiLvEuhclIaAavAgPs8VXiKNBLgGFUrx8EWmldt2ezKPpicIrv1rlyQeJhuTS0X5I1+8gOw3f7vXy1vW1I4amg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      i18next.init({
+        resources: {
+          en: {
+            translation: {
+              "welcome": "Welcome!",
+              "login": "Login",
+            }
+          },
+          es: {
+            translation: {
+              "welcome": "Bienvenido!",
+              "login": "Iniciar sesión",
+            }
+          },
+          uk: {
+            translation: {
+              "welcome": "Ласкаво просимо!",
+              "login": "Вхід",
+            }
+          },
+          en1: {
+            translation: {
+              "Ласкаво просимо!": "Welcome!",
+            }
+          },
+        }
+      });
+      const lng = {lng: "en"};
+      const welcomeText = i18next.t("welcome", lng);
+      console.log(welcomeText);
+      console.log(i18next.t("login", lng));
+    </script>
+  </body>
+</html>
